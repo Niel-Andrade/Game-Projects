@@ -4,42 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="assets/diveIMG.jpg">
+    <link rel="icon" href="assets/jokenpoIMG.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      charset="UTF-8"
+    ></script>
     <title>Jokenpô</title>
   </head>
+
   <body>
     <header>
       <nav>
-        <a href="index.html"> &#129044;</a>
-        <a href="dado.html">Dado</a>
-        <a href="jokenpo.html">Jokenpô</a>
+        <a href="index.html"
+          ><i id="back" class="fa fa-arrow-circle-left" aria-hidden="true"></i
+        ></a>
       </nav>
     </header>
     <main class="main-game">
+      <div id="win-animation" class="animation">
+        <h1 class="h1-animation">Você Ganhou</h1>
+      </div>
+      <div id="lose-animation" class="animation">
+        <h1 class="h1-animation">Você Perdeu</h1>
+      </div>
+      <div id="draw-animation" class="animation">
+        <h1 class="h1-animation">Saiu Empate</h1>
+      </div>
       <div class="main-game-div">
-        <div id="win-animation" class="animation">
-          <h1>voce ganhou</h1>
-        </div>
-        <div id="lose-animation" class="animation"></div>
-        <div id="draw-animation" class="animation"></div>
 
-        <div class="div-escolha">
-          <img src="assets/questionMark.jpeg" id="questionMark" alt="" />
+        <div class="div-escolha-com-nome">
+          
+          <div class="div-escolha questionMarkDiv">
+            <img src="assets/questionMark.jpeg" id="questionMark" alt="" />
+          </div>
+          <h1 class="nome-da-escolha" id="questionMarkText">Sistema</h1>
         </div>
+
+
+
         <div>
-          <h2>VS</h2>
+          <h2 id="vs">VS</h2>
         </div>
+
+<h1 class="nome-da-escolha" id="questionMarkText">Faça Sua Escolha:</h1>
         <div id="div-sua-escolha">
-          <div class="div-escolha" id="option0" onclick="selectOption(0)">
-            <img src="assets/stone.jpeg" alt="" />
+          <div class="div-escolha-com-nome">
+            <div class="div-escolha" id="option0" onclick="selectOption(0); selectOptionName(0)">
+              <img src="assets/stone.jpeg" alt="" />
+            </div>
+            <h1 class="nome-da-escolha" id="nameOption0">Pedra</h1>
           </div>
-          <div class="div-escolha" id="option1" onclick="selectOption(1)">
-            <img src="assets/paper.jpeg" alt="" />
+
+          <div class="div-escolha-com-nome">
+            <div class="div-escolha" id="option1" onclick="selectOption(1); selectOptionName(1)">
+              <img src="assets/paper.jpeg" alt="" />
+            </div>
+            <h1 class="nome-da-escolha" id="nameOption1">Papel</h1>
           </div>
-          <div class="div-escolha" id="option2" onclick="selectOption(2)">
-            <img src="assets/scissors.jpeg" alt="" />
+
+          <div class="div-escolha-com-nome">
+            <div class="div-escolha" id="option2" onclick="selectOption(2); selectOptionName(2)">
+              <img src="assets/scissors.jpeg" alt="" />
+            </div>
+            <h1 class="nome-da-escolha" id="nameOption2">Tesoura</h1>
           </div>
         </div>
+
         <button id="confirm-button" type="button" onclick="buttonClicked()">
           Confirmar
         </button>
